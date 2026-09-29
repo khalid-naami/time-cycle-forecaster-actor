@@ -1,0 +1,16 @@
+{
+    "actorSpecification": 1,
+    "name": "time-cycle-forecaster",
+    "title": "Time Cycle Forecaster & Market Harmonics",
+    "description": "Detect multi-year market cycles (18Y Stock, 16Y Commodity, 4Y Halving, 8Y FX), FFT spectral harmonics, historical analog projections, and SARIMA turning points.",
+    "version": "1.0",
+    "meta": {
+        "template": "python-empty"
+    },
+    "dockerfile": "../Dockerfile",
+    "input": "./input_schema.json",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    },
+    "output": "./output_schema.json"
+}
