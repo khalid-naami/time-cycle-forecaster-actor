@@ -1,0 +1,12 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Time Cycle Forecaster Output",
+    "properties": {
+        "dataset": {
+            "type": "string",
+            "title": "Dataset link",
+            "description": "Direct link to the dataset containing multi-asset time cycle forecasts and historical regimes.",
+            "template": "{{links.apiDefaultDatasetUrl}}/items"
+        }
+    }
+}
