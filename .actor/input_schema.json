@@ -1,0 +1,77 @@
+{
+    "title": "Time Cycle Forecaster Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "symbols": {
+            "title": "Target Tickers / Symbols",
+            "type": "array",
+            "description": "List of tickers, indices, commodities, currencies, or crypto symbols to analyze cycles for (e.g. SPY, QQQ, BTC-USD, GC=F, EURUSD=X, AAPL, NVDA).",
+            "editor": "json",
+            "prefill": ["SPY", "QQQ", "BTC-USD", "GC=F"],
+            "default": ["SPY", "QQQ", "BTC-USD", "GC=F"]
+        },
+        "cycleTemplate": {
+            "title": "Cycle Profile / Template",
+            "type": "string",
+            "description": "Select predefined institutional cycle templates or multi-cycle composite overlay.",
+            "editor": "select",
+            "default": "all",
+            "enum": [
+                "all",
+                "stock_18y",
+                "commodity_16y",
+                "crypto_4y",
+                "forex_8y"
+            ],
+            "enumTitles": [
+                "All Cycles Composite Overlay (Stock 18Y, Comm 16Y, Crypto 4Y, Forex 8Y)",
+                "Stock Market Cycles (18-Year Real Estate / Business Cycle)",
+                "Commodities Cycles (16-Year Supercycle)",
+                "Crypto Market Cycles (4-Year Halving Cycle)",
+                "Forex Market Cycles (8-Year Dollar Cycle)"
+            ]
+        },
+        "forecastHorizonMonths": {
+            "title": "Forecast Horizon (Months)",
+            "type": "integer",
+            "description": "Number of months into the future to project analog cycles and statistical ARIMA models (e.g. 36 months = 3 years).",
+            "default": 36,
+            "minimum": 6,
+            "maximum": 120
+        },
+        "yearsBack": {
+            "title": "Historical Lookback (Years)",
+            "type": "integer",
+            "description": "Number of historical years of market data to fetch for phase extraction and analog matching.",
+            "default": 30,
+            "minimum": 5,
+            "maximum": 100
+        },
+        "enableArimaForecasts": {
+            "title": "Include ARIMA / SARIMAX Forecasts",
+            "type": "boolean",
+            "description": "Enable fitting ARMA, ARIMA, and seasonal SARIMA statistical models on monthly log prices.",
+            "default": true
+        },
+        "enableSpectralFFT": {
+            "title": "Include Fast Fourier Transform (FFT) Harmonics",
+            "type": "boolean",
+            "description": "Perform power spectral density (PSD) decomposition to detect dominant periodic cycles.",
+            "default": true
+        },
+        "includeHistoricalLedger": {
+            "title": "Include Historical Cycle Phases Ledger",
+            "type": "boolean",
+            "description": "Include complete table of past Bullish/Bearish phases with start/end prices, % returns, drawdowns, and accuracy.",
+            "default": true
+        },
+        "includeTimeSeries": {
+            "title": "Include Monthly Time Series & Waves",
+            "type": "boolean",
+            "description": "Include monthly historical price and composite wave time series arrays.",
+            "default": true
+        }
+    },
+    "required": ["symbols"]
+}
