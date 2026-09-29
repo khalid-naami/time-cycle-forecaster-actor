@@ -1,0 +1,160 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "type": "object",
+        "properties": {
+            "symbol": {
+                "type": "string",
+                "title": "Symbol / Ticker"
+            },
+            "cycleProfile": {
+                "type": "string",
+                "title": "Cycle Profile"
+            },
+            "currentPrice": {
+                "type": "number",
+                "title": "Current Price"
+            },
+            "primaryCycle": {
+                "type": "string",
+                "title": "Primary Cycle"
+            },
+            "currentPhase": {
+                "type": "string",
+                "title": "Current Phase"
+            },
+            "phaseStartDate": {
+                "type": "string",
+                "title": "Phase Start Date"
+            },
+            "phaseEndDate": {
+                "type": "string",
+                "title": "Phase End Date"
+            },
+            "daysRemaining": {
+                "type": "integer",
+                "title": "Days Remaining"
+            },
+            "monthsRemaining": {
+                "type": "integer",
+                "title": "Months Remaining"
+            },
+            "compositeWaveScore": {
+                "type": "number",
+                "title": "Composite Wave Momentum (-1 to +1)"
+            },
+            "historicalBullishAccuracyPct": {
+                "type": "number",
+                "title": "Bullish Phases Win Rate (%)"
+            },
+            "historicalBearishAccuracyPct": {
+                "type": "number",
+                "title": "Bearish Phases Win Rate (%)"
+            },
+            "olsR2Pct": {
+                "type": "number",
+                "title": "Cycle Wave OLS R-Squared (%)"
+            },
+            "nextTurningPointDate": {
+                "type": "string",
+                "title": "Next Cycle Turning Point"
+            },
+            "projectedReturn1YPct": {
+                "type": "number",
+                "title": "Projected 1-Year Analog Return (%)"
+            },
+            "projectedReturn3YPct": {
+                "type": "number",
+                "title": "Projected 3-Year Analog Return (%)"
+            },
+            "fftDominantCyclesMonths": {
+                "type": "array",
+                "title": "FFT Dominant Cycles (Months)"
+            },
+            "executiveSummary": {
+                "type": "string",
+                "title": "Executive Summary"
+            }
+        }
+    },
+    "views": {
+        "overview": {
+            "title": "Time Cycle Overview",
+            "description": "Executive overview of current cycle regimes, momentum scores, phase countdowns, and analog return projections.",
+            "transformation": {
+                "fields": [
+                    "symbol",
+                    "currentPrice",
+                    "primaryCycle",
+                    "currentPhase",
+                    "phaseEndDate",
+                    "daysRemaining",
+                    "compositeWaveScore",
+                    "historicalBullishAccuracyPct",
+                    "historicalBearishAccuracyPct",
+                    "olsR2Pct",
+                    "projectedReturn1YPct",
+                    "projectedReturn3YPct",
+                    "nextTurningPointDate"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "columns": {
+                    "symbol": {
+                        "label": "Ticker",
+                        "format": "text"
+                    },
+                    "currentPrice": {
+                        "label": "Price",
+                        "format": "number"
+                    },
+                    "primaryCycle": {
+                        "label": "Primary Cycle",
+                        "format": "text"
+                    },
+                    "currentPhase": {
+                        "label": "Current Regime",
+                        "format": "text"
+                    },
+                    "phaseEndDate": {
+                        "label": "Phase End Date",
+                        "format": "text"
+                    },
+                    "daysRemaining": {
+                        "label": "Days Left",
+                        "format": "number"
+                    },
+                    "compositeWaveScore": {
+                        "label": "Wave Score",
+                        "format": "number"
+                    },
+                    "historicalBullishAccuracyPct": {
+                        "label": "Bullish Win %",
+                        "format": "percentage"
+                    },
+                    "historicalBearishAccuracyPct": {
+                        "label": "Bearish Win %",
+                        "format": "percentage"
+                    },
+                    "olsR2Pct": {
+                        "label": "OLS R² %",
+                        "format": "percentage"
+                    },
+                    "projectedReturn1YPct": {
+                        "label": "1Y Proj %",
+                        "format": "percentage"
+                    },
+                    "projectedReturn3YPct": {
+                        "label": "3Y Proj %",
+                        "format": "percentage"
+                    },
+                    "nextTurningPointDate": {
+                        "label": "Next Turning Point",
+                        "format": "text"
+                    }
+                }
+            }
+        }
+    }
+}
