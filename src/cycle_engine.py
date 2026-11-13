@@ -374,7 +374,7 @@ def run_cycle_forecaster_analysis(
     primary_phases = all_phases[primary_cycle['name']]
     
     # 2. Identify Current State
-    current_time = pd.Timestamp(datetime.date.today())
+    current_time = pd.Timestamp(datetime.datetime.now(datetime.timezone.utc).date())
     current_phase_obj = None
     for p in primary_phases:
         if p['start'] <= current_time <= p['end']:
