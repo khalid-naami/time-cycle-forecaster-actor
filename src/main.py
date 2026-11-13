@@ -74,6 +74,9 @@ async def main():
             ]
         }
         await Actor.set_value("OUTPUT", summary_payload)
+        if not results:
+            await Actor.fail(status_message="Time Cycle Forecaster produced 0 asset dossiers.")
+            return
         
         Actor.log.info(f"✅ Time Cycle Forecaster completed! {len(results)} asset dossiers pushed to Apify Dataset.")
 
