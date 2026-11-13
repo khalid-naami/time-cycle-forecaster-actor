@@ -69,13 +69,77 @@
             },
             "fftDominantCyclesMonths": {
                 "type": "array",
-                "title": "FFT Dominant Cycles (Months)"
+                "title": "FFT Dominant Cycles (Months)",
+                "items": {
+                    "type": "number"
+                }
+            },
+            "olsRegressionEquation": {
+                "type": "string",
+                "title": "OLS Regression Equation"
+            },
+            "nextTurningPointType": {
+                "type": "string",
+                "title": "Next Turning Point Type"
+            },
+            "analogProjectionType": {
+                "type": "string",
+                "title": "Analog Projection Type"
+            },
+            "fftHarmonics": {
+                "type": "array",
+                "title": "FFT Spectral Harmonics",
+                "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                }
+            },
+            "statisticalModels": {
+                "type": "object",
+                "title": "Statistical ARIMA/SARIMA Models",
+                "additionalProperties": true
+            },
+            "seasonalDecomposition": {
+                "type": "object",
+                "title": "Seasonal Decomposition Variances",
+                "additionalProperties": true
+            },
+            "historicalLedger": {
+                "type": "array",
+                "title": "Historical Cycle Phases Ledger",
+                "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                }
+            },
+            "analogForecastSeries": {
+                "type": "array",
+                "title": "Analog Forecast Series",
+                "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                }
+            },
+            "monthlyTimeSeries": {
+                "type": "array",
+                "title": "Monthly Time Series",
+                "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                }
             },
             "executiveSummary": {
                 "type": "string",
                 "title": "Executive Summary"
+            },
+            "calculatedAt": {
+                "type": "string",
+                "title": "Calculated At"
             }
-        }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": true,
+        "required": []
     },
     "views": {
         "overview": {
