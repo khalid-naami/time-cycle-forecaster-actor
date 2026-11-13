@@ -34,8 +34,9 @@ def fetch_historical_prices(symbol: str, years_back: int = 30) -> pd.DataFrame:
     Returns monthly resampled OHLC DataFrame.
     """
     norm_sym = normalize_symbol(symbol)
-    start_date = (datetime.date.today() - datetime.timedelta(days=years_back * 365 + 100)).strftime("%Y-%m-%d")
-    end_date = datetime.date.today().strftime("%Y-%m-%d")
+    today_utc = datetime.datetime.now(datetime.timezone.utc).date()
+    start_date = (today_utc - datetime.timedelta(days=years_back * 365 + 100)).strftime("%Y-%m-%d")
+    end_date = today_utc.strftime("%Y-%m-%d")
     
     df = pd.DataFrame()
     
