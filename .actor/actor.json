@@ -5,12 +5,13 @@
     "description": "Detect multi-year market cycles (18Y Stock, 16Y Commodity, 4Y Halving, 8Y FX), FFT spectral harmonics, historical analog projections, and SARIMA turning points.",
     "version": "1.0",
     "meta": {
-        "template": "python-empty"
+        "templateId": "python-empty"
     },
     "dockerfile": "../Dockerfile",
     "input": "./input_schema.json",
     "storages": {
-        "dataset": "./dataset_schema.json"
+        "dataset": "./dataset_schema.json",
+        "keyValueStore": "./key_value_store_schema.json"
     },
     "output": "./output_schema.json"
 }
